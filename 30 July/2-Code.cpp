@@ -4,6 +4,7 @@
 // We are given that we have decimal,binary, hexadecimal representation
 #include<iostream>
 #include<bits/stdc++.h>
+#include<iomanip>
 using namespace std;
 int binary(int n)
 {
@@ -32,5 +33,5 @@ int main()
       /* code */
    }
       
-   cout<<y<<endl;
+   // cout<<y<<endl;
 }
