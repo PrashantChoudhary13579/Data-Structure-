@@ -1,8 +1,0 @@
-This is my first algorithm which contains -
-Aim= to find the sum of the elements of the array
-Algorithm = 
-1. The input from the user of the array 
-2. Now make the loop from starting 1 to n 
-3. Add all the num in sum 
-4. Print this as your ouput
-Output= Sum of the elements of the array
