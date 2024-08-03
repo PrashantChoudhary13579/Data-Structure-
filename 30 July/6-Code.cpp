@@ -4,7 +4,10 @@
 using namespace std;
 
 int main(){
-    int v=10;
+    int v;
+    cout<<"Enter the value of velocity = ";
+    cout<<endl;
+    cin>>v;
     int count=0;
     while(v!=0)
     {

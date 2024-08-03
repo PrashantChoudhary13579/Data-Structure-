@@ -42,7 +42,7 @@ int main()
             }
                float volume = cylinder(r, h) + remaining(r, height);
 
-                if(large<volume)
+            if(large<volume)
                 {
                     large=volume;
                 }
