@@ -4,16 +4,17 @@
 using namespace std;
 
 int main(){
-    int v;
+    float v;
     cout<<"Enter the value of velocity = ";
     cout<<endl;
     cin>>v;
     int count=0;
-    while(v!=0)
+    while(v>=0.0001)
     {
         count++;
         v=v/2;
     }
+    cout<<endl<<v;
     cout<<"The number of bounces are "<<count;
     
     return 0;
