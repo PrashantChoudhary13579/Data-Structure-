@@ -2,26 +2,31 @@
 #include<iostream>
 #include<math.h>
 using namespace std;
-void function(int arr[],int n)
+void function(int arr[],int n,int value)
 {
     int x;
     int num=1;
-    
+    int sum=0;
     for (int i = 0; i < n; i++)
     {
+        
         if (i==0)
         {
-            cout<<"1 + ";
+            num=arr[0];
+            cout<<num;
         }
         else
         {
-        num=arr[i];
-        cout<<num<<"x^"<< i << " + ";
+        num=arr[i]* pow(value, i);
+        cout<<" + "<<num ;
         }
+        // sum=sum+num;
+        sum+=num;
     }    
+    cout<<"  =  "<<sum;
 }
 int main(){
-    int arr[5]={1,2,3,4,5};
-    function(arr,5);
+    int arr[10]={1,2,3,4,5,6,7,8};
+    function(arr,8,2);
     return 0;
 }
