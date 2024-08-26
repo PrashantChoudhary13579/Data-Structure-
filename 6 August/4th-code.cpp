@@ -1,4 +1,4 @@
-// In this code we have to find the time complexities of the linear search and plot the graph of the of the output and match it with the general given
+// In this code we have to find the time taken of the linear search and plot the graph of the of the output and match it with the general given
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
