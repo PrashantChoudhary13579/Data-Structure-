@@ -17,46 +17,33 @@ Types of linked list
 */
 #include<iostream>
 using namespace std;
-
-class node{
-    public: 
+struct Node{
+    public:
     int data;
-    node * next;
-    // creating constructor
-    node(int data)
+    Node * next;
+    Node (int data_new)
     {
-        this ->  data = data;
-        this -> next = NULL;
+        data=data_new;
+        next=nullptr;
 
     }
 };
-
-void insertAtHead (node * &head, int d)
+void print(Node * head)
 {
-    // creating new node
-    node* temp =new node (d);
-    temp -> next = head;
-    head =temp;
-}
-
-void print (node * &head)
-{
-    node* temp= head;
-    while(temp!=NULL)
+    Node *node1 = head;
+    while(node1!=nullptr)
     {
-        cout<<temp -> data <<"  ";
-        temp =  temp -> next;
+        cout<<head->data<<"  ";
+        node1= node1->next;
     }
-    cout << endl;
 }
-
 int main()
 {
-    node * node1 = new node(10);
-    cout<< node1 ->data<< endl;
-    cout<< node1 ->next <<endl;
-    insertAtHead(node1,4);
-    insertAtHead(node1,9);
-    print(node1);
+    Node*head =new Node(30);
+    head -> next =new Node (40);
+    head -> next -> next = new Node(50);
+    head -> next -> next -> next = new Node(60);
+    // cout<< head->data<<"  "<<head ->next ->data <<" ";
+    print(head);
     return 0;
 }
