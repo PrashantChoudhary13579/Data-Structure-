@@ -89,7 +89,7 @@ void InsertNode (node * &p , int value, string choose)
             p->left ->parent = p;
         }
         else{
-            cout<<"Left child already exists. Try with a different node."<<endl;
+            InsertNode(p->left,value , choose);
         }
         
     }
@@ -103,7 +103,7 @@ void InsertNode (node * &p , int value, string choose)
         }
         else
         {
-            cout<<"Right child already exists . Try again with a different node."<<endl;
+            InsertNode(p->right,value , choose);
         }
         
     }
@@ -127,11 +127,20 @@ void CreateNode (node * & root)
     cin>>value;
 
     string choose;
-    cout<<"Enter where to insert as left (y) or (n)";
+    cout<<"Enter where to insert at left ? (y/n)";
     cin>>choose;
 
     InsertNode(root, value, choose);
     
+}
+void inOrderTraversal(node *p)
+{
+    if (p == NULL)
+        return;
+
+    inOrderTraversal(p->left);
+    cout << p->data << " -> ";
+    inOrderTraversal(p->right);
 }
 int main()
 {
@@ -143,7 +152,10 @@ int main()
     {
          CreateNode(root);
     }
-    
+    cout<<endl;
+    cout << "In-order Traversal: ";
+    inOrderTraversal(root);
+    cout << endl;
     return 0;
    
 }
