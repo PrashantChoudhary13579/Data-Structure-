@@ -1,3 +1,26 @@
+Aim: Implement linear search using both iterative and recursive approaches.
+
+Input:
+An array arr[] of size n.
+A search key key to find in the array.
+Option n (1 for iterative, 2 for recursive search).
+    
+Iterative Approach:
+Take input for the array and the key.
+Iterate through the array from index 0 to n-1.
+If the element at the current index is equal to key, return the index.
+If the loop completes without finding the key, return -1 indicating the key was not found.
+    
+Recursive Approach:
+Take input for the array and the key.
+Check if the array size is zero. If yes, return -1 (base case).
+If the last element of the array matches the key, return the index.
+Otherwise, call the recursive function with the remaining array (decreasing the size by 1).
+
+Output:
+Print the index of the element if found or a message saying the element was not found.
+Print the method used for searching (iterative or recursive).
+
 #include<iostream>
 using namespace std;
 
