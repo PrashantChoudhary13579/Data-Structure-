@@ -21,6 +21,14 @@ Output:
 Print the index of the element if found or a message saying the element was not found.
 Print the method used for searching (iterative or recursive).
 
+Time Complexity-
+Iterative Approach: Best Case: O(1)
+                    Worst Case: O(n)
+Recursive Approach: Best Case: O(1)
+                    Worst Case: O(n)
+Space Complexity-   Iterative: O(1)
+                    Recursive: O(n)
+
 #include<iostream>
 using namespace std;
 
