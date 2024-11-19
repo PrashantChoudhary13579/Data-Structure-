@@ -1,56 +1,76 @@
-// We have to write the code for linear Search and have an option to opt whether iterative or recursive
 #include<iostream>
 using namespace std;
 
-int iterative(int arr[], int size,int key)
+int iterative(int arr[], int size, int key)
 {
     for (int i = 0; i < size; i++)
     {
-        if (arr[i]==key)
+        if (arr[i] == key)
         {
-            return i;
+            return i; // Return the index if the key is found
         }
-        
     }
-    return -1;
+    return -1; // Return -1 if the key is not found
 }
 
-int recursive (int arr[],int size, int key)
+int recursive(int arr[], int size, int key)
 {
-    if(arr[size]==key)
+    if (size == 0) // Base case: if size is 0, the element is not found
     {
-        return size;
+        return -1;
     }
-    else return recursive(arr,size-1,key);
+    if (arr[size - 1] == key) // Check if the key is found
+    {
+        return size - 1;
+    }
+    else
+    {
+        return recursive(arr, size - 1, key); // Recursively call for the remaining array
+    }
 }
 
-
-int main(){
+int main()
+{
     int n;
+    int arr[5] = {1, 2, 3, 6, 5}; // Sample array
+    int size = sizeof(arr) / sizeof(arr[0]);
 
-    int arr[5]={1,2,3,6,5};
-    int size = sizeof(arr)/sizeof(arr[0]);
+    cout << "Enter 1 for linear search using iterative method" << endl;
+    cout << "Enter 2 for linear search using recursive method" << endl;
+    cin >> n;
 
-    cout<<"Enter 1 for linear search using iterative "<<endl;
-    cout<<"Enter 2 for linear search using recursive "<<endl;
-    cin>>n;
-    cout<<"Enter the number you want to search "<<endl;
+    cout << "Enter the number you want to search: " << endl;
     int num;
-    cin>>num;
-    if(n==1)
-    {
-        int y=iterative(arr,size,num);
-         cout<<"The number is at index "<< y<<" using iterative."<<endl;
+    cin >> num;
 
-    }
-    else if(n==2) 
+    if (n == 1)
     {
-        int z=recursive(arr,size,num);
-         cout<<"The number is at index "<< z<<" using recursive."<<endl;
+        int y = iterative(arr, size, num);
+        if (y != -1)
+        {
+            cout << "The number is at index " << y << " using iterative method." << endl;
+        }
+        else
+        {
+            cout << "The number is not found using iterative method." << endl;
+        }
     }
-   else 
-   {
-    cout<<"Sorry invalid case<< "<<endl;
-   }
+    else if (n == 2)
+    {
+        int z = recursive(arr, size, num);
+        if (z != -1)
+        {
+            cout << "The number is at index " << z << " using recursive method." << endl;
+        }
+        else
+        {
+            cout << "The number is not found using recursive method." << endl;
+        }
+    }
+    else
+    {
+        cout << "Sorry, invalid option." << endl;
+    }
+
     return 0;
 }
