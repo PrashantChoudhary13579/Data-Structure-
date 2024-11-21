@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 int main(){
     // for 1D array
     int arr[4] = {2, 4, 5, 7};
@@ -12,7 +11,6 @@ int main(){
         cout << "Value at *ptr = " << *ptr << endl;
         ptr++;
     }
-
     // for 2D array
     int array1[2][2] = {{2, 3}, {4, 5}};
     int *array2[2][2];
@@ -23,7 +21,6 @@ int main(){
             array2[i][j] = &array1[i][j];
         }   
     }
-
     // Printing the value and address of array1
     cout << "Values and Addresses in array1:" << endl;
     for (int i = 0; i < 2; i++) {
