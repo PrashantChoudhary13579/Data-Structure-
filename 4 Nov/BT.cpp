@@ -43,11 +43,11 @@ void levelOrderTraversal(node * root)
         cout<<temp->data <<" ";
         q.pop();
 
-        if (temp->left)
+        if (temp->left != nullptr)
         {
             q.push(temp->left);
         }
-        if (temp->right)
+        if (temp->right != nullptr)
         {
             q.push(temp->right);
         }   

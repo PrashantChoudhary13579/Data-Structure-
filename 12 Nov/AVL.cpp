@@ -6,12 +6,26 @@ struct node
     int data;
     node *left;
     node *right;
+    int height;
     node(int d)
     {
         data = d;
         left = right = nullptr;
+        height = 1;
     }
 };
+int height (node * root)
+{
+    if(root == nullptr)
+    return 0;
+    return root->height;
+}
+node * rightrotation(node * y)
+{
+    node * x = y->left;
+    node * T2 = x->right;
+    
+}
 void insertionInAVL(node *root, int value)
 {
     if (root->data > value)

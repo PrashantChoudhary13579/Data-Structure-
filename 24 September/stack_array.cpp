@@ -48,7 +48,7 @@ int main()
     st.push(10);
     st.push(20);
     st.push(30);
-    while (!st.is())
+    while (!st.isEmpty())
     {
         cout << st.peek();
     }
