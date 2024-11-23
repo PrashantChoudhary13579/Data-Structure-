@@ -7,3 +7,7 @@ Approach =
 5. In which we will multiply the base to the c and store it in c .
 6. Now in the loop we will do decrement of the power and increment of the count.
 Output = We will print the value of c and the number of iteration it is going on.
+
+Time Complexity : O (n)
+
+Space Complexity : O (1)

@@ -1,4 +1,5 @@
-// Aim= Make an array b from the given array a of the same size from 1 to n such that b[i] contains the product of element of a[i] but not the element present at that index.
+// Aim= Make an array b from the given array a of the same size from 1 to n such that b[i] 
+// contains the product of element of a[i] but not the element present at that index.
 #include<iostream>
 using namespace std;
 
@@ -15,8 +16,6 @@ int main(){
     for (int i = 0; i < n; i++)
     {
         b[i]=c/a[i];
-        
-        
     }
     cout<<endl;
     cout<<"Elements of new array - ";
@@ -24,10 +23,5 @@ int main(){
     {
         cout<<b[i]<<"  ";
     }
-    
-    
-
-    
-    
     return 0;
 }

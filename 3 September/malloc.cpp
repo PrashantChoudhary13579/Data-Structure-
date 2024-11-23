@@ -1,94 +1,40 @@
-// learning about malloc function
-#include<iostream>
-#include<stdlib.h>
+#include <iostream>
+#include <stdlib.h> // For malloc, calloc, free
 using namespace std;
 
-int main(){
-    // int * ptr1,*ptr2;
-    // int n, i;
-    // cout<<"Enter the element "<<endl;
-    // cin>>n>>i;
-    // // dynamically allocating the memory using malloc()
+int main() {
+    int *ptr1, *ptr2, *ptr3;
+    int n;
 
-    // ptr1=(int *)malloc(n*sizeof(int));
-    // ptr2=(int *)malloc(i*sizeof(int));
-    // // memory not allocated
-    // if (ptr1= NULL )
-    // {
-    //     cout<<"Memory not allocated "<<endl;
-    //     exit(0);
-    // }
-    // // memory  allocated
-    // else{
-    //     cout<<"Memory allocated successfully "<<endl;
-    //     cout<<ptr1<<endl;
-    //     cout<<ptr2<<endl;   
-    // }
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    int num,*ptr;
-    cout<<"Number - "<<endl;
-    cin>>num;
-    // int arr[5];
-    // dynamically allocating the memory for n numbers
-     ptr = (int* )malloc(num*sizeof(int));
-    if (ptr=NULL)
-    {
-        cout<<"Memory not allocated."<<endl;
+    // Using malloc
+    ptr1 = (int *)malloc(n * sizeof(int));
+    if (!ptr1) {
+        cout << "Memory allocation failed using malloc." << endl;
+        return 1;
     }
-    else
-    {
-        cout<<"Memory allocated successfully "<<endl;
-        for (int i = 0; i < 15; i++)
-        {
-            ptr[i]=i+1;
-           cin >> *(ptr+i);
-        //    ptr+=4;
-        }
-        for (int i = 0; i < num; i++)
-        {
-            cout<<*(ptr+i)<<"  ";
-        }
+    cout << "Memory allocated using malloc at address: " << ptr1 << endl;
+
+    // Using calloc
+    ptr2 = (int *)calloc(n, sizeof(int));
+    if (!ptr2) {
+        cout << "Memory allocation failed using calloc." << endl;
+        return 1;
     }
-    
+    cout << "Memory allocated using calloc at address: " << ptr2 << endl;
 
+    // Using new
+    ptr3 = new int[n];
+    cout << "Memory allocated using new at address: " << ptr3 << endl;
 
+    // Freeing memory
+    free(ptr1);
+    free(ptr2);
+    delete[] ptr3;
 
+    cout << "Memory deallocated successfully." << endl;
 
-
-
-
-
-
-
-/*
-    // Applying the malloc function on 2d array
-    int arr1[3][3]={{1,2,3},{4,5,6},{7,8,9}};
-   int* arr2 = malloc(3 * sizeof(int*));
-    int i;
-    for ( i = 0; i < 3; i++)
-        arr2[i] = malloc(3 * sizeof(int*));
- 
-    // Initialising each element of the
-    // pointer array with the address of
-    // element present in the other array
-    int j;
-    for (i = 0; i < 3; i++) {
-        for ( j = 0; j < 3; j++) {
-            arr2[i][j] = &arr1[i][j];
-        }
-    }
- 
-    // Printing the array using
-    // the array of pointers
-    cout<<"The values are\n";
-    for (i = 0; i < 3; i++) {
-        for ( j = 0; j < 3; j++) {
-         cout<< *arr2[i][j] ;
-        }
-      cout<<endl;
-    }
-    
-    */
-    
     return 0;
 }

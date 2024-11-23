@@ -60,28 +60,21 @@ node *insertionAtEnd(node *last, int value)
         return head;
     }
 }
-node *insertion_AT_Specific(node *tail, int pos, int value)
-{
+node *insertion_AT_Specific(node *tail, int pos, int value){
     if ((tail == nullptr) && (pos < 1))
     {
-        if (pos != 1)
-        {
+        if (pos != 1) {    
             cout << "Invalid Case" << endl;
             return tail;
         }
         node * newnode = new node (value);
         tail = newnode;
         tail->next = tail;
-        return tail;
-        
+        return tail;   
     }
-    // creating a new node
-        node *node1 = new node(value);
-    // curr will point to head;
+    node *node1 = new node(value);
     node * curr = tail->next ;
-
-    if (pos == 1)
-    {
+    if (pos == 1){
         node1->next = curr;
         tail->next = node1;
         return curr;
@@ -89,24 +82,19 @@ node *insertion_AT_Specific(node *tail, int pos, int value)
     int i = 1;
     node * p = tail->next;
     node * s = p->next;
-    while(i != pos)
-    {
+    while(i != pos){
         curr = curr->next;
-        if (curr == tail->next)
-        {
+        if (curr == tail->next)  {
             cout<<"invalid position "<<endl;
             return tail;
         }
-        
     }
     node1 -> next = curr->next;
     curr->next = node1;
-    if (curr == tail)
-    {
+    if (curr == tail) {
         tail = node1;
         return tail;
     }
-    
 }
 void traversing(node *tail)
 {
