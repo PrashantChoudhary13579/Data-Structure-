@@ -1,4 +1,3 @@
-// In this code we have to find the time taken of the linear search and plot the graph of the of the output and match it with the general given
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -6,6 +5,7 @@
 
 using namespace std::chrono;
 using namespace std;
+
 long long linearSearch(long long arr[], long long key, long long size)
 {
     for (long long i = 0; i < size; i++)
@@ -17,42 +17,36 @@ long long linearSearch(long long arr[], long long key, long long size)
     }
     return -1;
 }
+
 void timetaken()
 {
     long long size = 50;
     for (long long i = 0; i < 10; i++)
     {
         long long arr[size];
-        for (long long i = 0; i < size; i++)
+        for (long long j = 0; j < size; j++)
         {
-            arr[i] = rand();
-            // cout<<arr[i]<<endl;
+            arr[j] = rand();
         }
-        // time_t starttime=time(NULL);
+
+        long long key = arr[size / 2];  // Searching for a random element in the array
         auto start1 = high_resolution_clock::now();
 
-        for (long long i = 0; i < 100; i++)
+        for (long long j = 0; j < 100; j++)
         {
-            linearSearch(arr, arr[size], size);
+            linearSearch(arr, key, size);
         }
-        // time_t endtime=time(NULL);
+
         auto stop1 = high_resolution_clock::now();
-        // time_t av = (endtime-starttime)/100;
-        // long long av = (endtime-starttime)/100;
         auto duration = duration_cast<microseconds>(stop1 - start1);
 
-        cerr << "Time taken in microseconds : "
-             << (double)(duration.count() / 1000.0) << endl;
-        // return av;
+        cout << "Size: " << size << " Time taken in microseconds: " << (double)(duration.count() / 100.0) << endl;
         size = size * 10;
-        cout << size << endl;
     }
 }
 
 int main()
 {
-    // double first = timetaken();
-    // cout<<first<<endl;
     timetaken();
     return 0;
 }
